@@ -2,10 +2,11 @@
 
 Proyecto Final de COMP-3015
 
-Miembros:
-Jose Luis Manners
+Miembros
+--------
 
-Kathereen Rivera Rodriguez
+**Jose Luis Manners**
 
-Christopher Pagan Roldan
+**Kathereen Rivera Rodriguez**
 
+**Christopher Pagan Roldan**
