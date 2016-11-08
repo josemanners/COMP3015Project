@@ -6,7 +6,7 @@ USE `comp3015db`;
 
 DROP TABLE IF EXISTS `comp3015db`.`Ad`;
 CREATE TABLE IF NOT EXISTS `comp3015db`.`Ad` (
-	ID INT auto_increment primary key,
+	ID INT NOT NULL auto_increment primary key,
 	Title VARCHAR(50) NOT NULL,
 	Descr VARCHAR(500),
     Type TINYINT(1), # 0 = rent, 1 = sale
@@ -20,13 +20,13 @@ CREATE TABLE IF NOT EXISTS `comp3015db`.`Ad` (
 
 DROP TABLE IF EXISTS `comp3015db`.`ProductType`;
 CREATE TABLE IF NOT EXISTS `comp3015db`.`ProductType` (
-	ID INT auto_increment primary key,
+	ID INT NOT NULL auto_increment primary key,
 	Descr VARCHAR(10)   # casa, auto
 );
 
 DROP TABLE IF EXISTS `comp3015db`.`User`;
 CREATE TABLE IF NOT EXISTS `comp3015db`.`User` (
-	ID INT auto_increment primary key,
+	ID INT NOT NULL auto_increment primary key,
 	FirstName VARCHAR(20) NOT NULL,
 	MiddleName VARCHAR(20),
 	PaternalSurName VARCHAR(20) NOT NULL,
