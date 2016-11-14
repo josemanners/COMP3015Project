@@ -2,31 +2,59 @@ package com.inter.comp3015project.model;
 
 import java.sql.Blob;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+@Entity
+@Table(name="Ad")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "ad")
 public class Ad 
 {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID", nullable = false)
 	@XmlAttribute
 	private int id;
+	
+	@Column(name = "Title", nullable = false)
 	@XmlAttribute
 	private String title;
+	
+	@Column(name = "Descr", nullable = true)
 	@XmlAttribute
 	private String desciption;
+	
+	@Column(name = "Type", nullable = true)
 	@XmlAttribute
 	private int type;
+	
+	@Column(name = "Image", nullable = true)
 	@XmlAttribute
 	private Blob image;
+	
+	@Column(name = "Phone", nullable = true)
 	@XmlAttribute
 	private String phone;
+	
+	@Column(name = "Email", nullable = true)
 	@XmlAttribute
 	private String email;
+	
+	@Column(name = "OwnerID", nullable = true)
 	@XmlAttribute
 	private int ownerID;
+	
+	@Column(name = "Price", nullable = true)
 	@XmlAttribute
 	private double price;
 	
