@@ -28,32 +28,32 @@ public class User
 	
 	@Column(name = "FirstName", nullable = false)
 	@XmlAttribute
-    private String firstName;
+	private String firstName;
 	
 	@Column(name = "MiddleName", nullable = true)
 	@XmlAttribute
-    private String middleName;
+	private String middleName;
 	
 	@Column(name = "PaternalSurname", nullable = false)
 	@XmlAttribute
-    private String paternalSurname;
+	private String paternalSurname;
 	
 	@Column(name = "MaternalSurname", nullable = true)
 	@XmlAttribute
-    private String maternalSurname;
+	private String maternalSurname;
 	
 	@Column(name = "BirthDate", nullable = false)
 	@XmlAttribute
-    private Date birthDate;
+	private Date birthDate;
 	
 	@Column(name = "UserName", nullable = false)
 	@XmlAttribute
-    private String userName;
+	private String userName;
 	
 	@Column(name = "Password", nullable = false)
 	@XmlAttribute
-    private String password;
-    
+	private String password;
+	
 	public User()
 	{
 		super();
