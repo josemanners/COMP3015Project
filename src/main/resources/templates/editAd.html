@@ -2,9 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>Modificar Anuncio</title>
+<title></title>
 </head>
 <body>
-
+	<h3>Edit Ad:</h3>
+	<form action="#" th:action="@{'/ads/' + ${ad.id}}" th:object = "${ad}" th:method = "put">
+		<input type = "text" th:field = "*{title}" />
+		<input type = "text" th:field = "*{description}" />
+		<a th:text="Cancel" th:href="@{/ad}"/>
+		<input type = "submit" value="Update"/>
+	</form>
+	<form action="#" th:action="@{'/ad/' + ${ad.id}}" th:object = "${ad}" th:method = "delete">
+		<input type = "submit" value="Delete" />
+	</form>
 </body>
 </html>

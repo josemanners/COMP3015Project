@@ -1,18 +1,22 @@
 package com.inter.comp3015project.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name="User")
@@ -46,7 +50,7 @@ public class User
 	@XmlAttribute
 	private Date birthDate;
 	
-	@Column(name = "UserName", nullable = false)
+	@Column(unique = true, name = "UserName", nullable = false)
 	@XmlAttribute
 	private String userName;
 	
@@ -54,6 +58,10 @@ public class User
 	@XmlAttribute
 	private String password;
 	
+    @OneToMany(mappedBy = "ownerID")
+    @JsonManagedReference
+    private Set<Ad> ads;	
+    
 	public User()
 	{
 		super();
@@ -146,5 +154,15 @@ public class User
 	public void setPassword(String password)
 	{
 		this.password = password;
+	}
+	
+	public Set<Ad> getAds()
+	{
+		return ads;
+	}
+	
+	public void setAds(Set<Ad> ads)
+	{
+		this.ads = ads;
 	}
 }
